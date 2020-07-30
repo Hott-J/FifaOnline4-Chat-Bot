@@ -1,5 +1,5 @@
 const scriptName = "피파온라인4 프로필 검색";
-/**
+/*
 * (string) room
 * (string) sender
 * (boolean) isGroupChat

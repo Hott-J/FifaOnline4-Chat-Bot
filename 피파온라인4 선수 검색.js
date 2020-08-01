@@ -21,8 +21,8 @@ const Kakao=new kalingModule;
 
 function kakao_login(replier){
   try{
-    Kakao.init('myJsId'); // 중요포인트 : 반드시 봇계정 카카오아이디와 패스워드로 카카오디벨로퍼에 로그인하여 자바스크립트 키값을 받아올것!
-    Kakao.login('myKakaoId','password');//중요포인트 : 반드시 봇계정 카카오아이디와 패스워드를 적어줄것!!
+    Kakao.init('2d0e4efc34993dc5353ebb2f964f3f4d'); // 중요포인트 : 반드시 봇계정 카카오아이디와 패스워드로 카카오디벨로퍼에 로그인하여 자바스크립트 키값을 받아올것!
+    Kakao.login('jhj07152019@gmail.com','rkdmfdl.7');//중요포인트 : 반드시 봇계정 카카오아이디와 패스워드를 적어줄것!!
     doc = Jsoup.connect("https://kr.fifaaddict.com/fo4db?playername="+search).get();
   }catch(e){replier.reply("로그인 세션이 만료되었습니다.")}
 }
@@ -45,8 +45,8 @@ function find_player(){
       season[i]=Jsoup.connect(id[i]).get().select('span.season_name').text() // 시즌 이름
       stat[i]=doc.select('div.poswrap').get(i) // 선수 스텟 각 시즌마다
       s[i]=stat[i].select('span').text() // 띄어쓰기를 위함
-      salary[i]=doc.select('span.fpbg').get(i).text() // 선수 급여
-    }catch(e){img[i]=null,id[i]=' ',season[i]=' ';} // 선수 검색 실패 or 5개 미만일 경우 예외처리
+      salary[i]="급여 : "+doc.select('span.fpbg').get(i).text()+" " // 선수 급여
+    }catch(e){img[i]=null,id[i]=' ',season[i]=' ',s[i]=' ',salary[i]=' ';} // 선수 검색 실패 or 5개 미만일 경우 예외처리
   }
 }
 
@@ -87,7 +87,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
       l5:id[4].split('.com/')[1]
     }
     if(flag){
-      send_template(room,templateId,set)
+      send_template(room,33609,set)
     }
     else{
       replier.reply("선수 이름을 다시 확인해주세요.")

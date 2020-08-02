@@ -42,8 +42,9 @@
 
 <br/>
 
-     !일대일 (유저명)
-  ![일대일](https://user-images.githubusercontent.com/47052106/89118887-89ef1300-d4e4-11ea-8939-b837d055761c.jpg)
+     !볼타격수 (유저명)
+  ![KakaoTalk_20200802_172253278](https://user-images.githubusercontent.com/47052106/89119052-2e258980-d4e6-11ea-80ff-16b52947afbc.jpg)
+
 
    
 <br/>

@@ -13,39 +13,39 @@
 
 <br/>
 
-## * 사용 예시
+## * 사용 예시 ( 유사한 명령어들은 대표적인 것 하나만 예시로 들고 생략하였습니다.)
 - - -
 
      !정보 (유저명)
-   ![정보](https://user-images.githubusercontent.com/47052106/89118853-1ea54100-d4e4-11ea-9e35-b02dec235ad2.jpg)
+   ![KakaoTalk_20200802_172253278_09](https://user-images.githubusercontent.com/47052106/89119153-e2271480-d4e6-11ea-91af-c2cd3d630aa3.jpg)
 
 <br/>
 
      !이벤트
-  ![이벤트1](https://user-images.githubusercontent.com/47052106/89118859-311f7a80-d4e4-11ea-8fc5-ad572bccd497.jpg)
-  ![이벤트](https://user-images.githubusercontent.com/47052106/89118880-7b086080-d4e4-11ea-972d-9db49420ed7d.jpg)
-   
-<br/>
-
-     !일대일 (유저명)
-  ![일대일](https://user-images.githubusercontent.com/47052106/89118887-89ef1300-d4e4-11ea-8939-b837d055761c.jpg)
-
-<br/>
-
-     !이대이 (유저명)
-  ![일대일](https://user-images.githubusercontent.com/47052106/89118887-89ef1300-d4e4-11ea-8939-b837d055761c.jpg)
+   ![KakaoTalk_20200802_172253278_07](https://user-images.githubusercontent.com/47052106/89119155-ec491300-d4e6-11ea-8d39-a03113fa2168.jpg)
 
 <br/>
 
      !일대일 (유저명)
-  ![일대일](https://user-images.githubusercontent.com/47052106/89118887-89ef1300-d4e4-11ea-8939-b837d055761c.jpg)
+   ![KakaoTalk_20200802_172253278_08](https://user-images.githubusercontent.com/47052106/89119163-f5d27b00-d4e6-11ea-809b-a9623186d63e.jpg)
+
+<br/>
+
+     !볼타전체 (유저명)
+  ![KakaoTalk_20200802_172253278_01](https://user-images.githubusercontent.com/47052106/89119110-8eb4c680-d4e6-11ea-9b78-f00c1090e6ea.jpg)
 
 <br/>
 
      !볼타격수 (유저명)
   ![KakaoTalk_20200802_172253278](https://user-images.githubusercontent.com/47052106/89119052-2e258980-d4e6-11ea-80ff-16b52947afbc.jpg)
+  
+<br/>
 
-
+     !선수 (선수명)
+  ![KakaoTalk_20200802_172253278_02](https://user-images.githubusercontent.com/47052106/89119185-21edfc00-d4e7-11ea-8a60-9fb32e8767f4.jpg)
+  
+     해당 칸 클릭 시 아래와 같이 선수 특징, 스텟, 클럽 경력, 시세 등 상세정보 볼 수 있음
+  ![KakaoTalk_20200802_172253278_04](https://user-images.githubusercontent.com/47052106/89119195-3205db80-d4e7-11ea-9438-d6e62c5f35ee.jpg)
    
 <br/>
 

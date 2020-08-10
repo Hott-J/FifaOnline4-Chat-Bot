@@ -22,8 +22,8 @@ const Kakao=new kalingModule;
 
 function kakao_login(replier){
   try{
-    Kakao.init('myJs'); // 중요포인트 : 반드시 봇계정 카카오아이디와 패스워드로 카카오디벨로퍼에 로그인하여 자바스크립트 키값을 받아올것!
-    Kakao.login('myKakaoId','password');//중요포인트 : 반드시 봇계정 카카오아이디와 패스워드를 적어줄것!!
+    Kakao.init('2d0e4efc34993dc5353ebb2f964f3f4d'); // 중요포인트 : 반드시 봇계정 카카오아이디와 패스워드로 카카오디벨로퍼에 로그인하여 자바스크립트 키값을 받아올것!
+    Kakao.login('jhj07152019@gmail.com','rkdmfdl.7');//중요포인트 : 반드시 봇계정 카카오아이디와 패스워드를 적어줄것!!
     doc = Jsoup.connect("http://fifaonline4.nexon.com/profile/common/PopProfile?strCharacterName="+search).get();
     doc1 = Jsoup.connect("http://fifaonline4.nexon.com/datacenter/rank?strCharacterName="+search).get()
   }catch(e){replier.reply("로그인 세션이 만료되었습니다.")}
@@ -37,23 +37,73 @@ function send_template(room,id,set){
   Kakao.send(room,template,'custom');
 }
 
+function find_user_id(search){ // 유저 닉네임을 파라미터로 검색할 user accessid를 찾는다.
+  var doc=JSON.parse(Jsoup.connect("https://api.nexon.co.kr/fifaonline4/v1.0/users?nickname="+search)
+  .header("Authorization","nexonKey")
+  .ignoreContentType(true)
+  .get().text())
+  return doc['accessId']
+}
+
 function find_profile(){
   try{
     img=doc.select('div.img > img').get(0).attr('src')
     img1=doc.select('div.img > img').get(1).attr('src')
     name=doc.select('span.coach').text();
     price=doc1.select("span.price").text();
-    tag=doc1.select("p.rank_advice").text().split('데')[0]
-    num=doc.select("span.num").text()
+    //tag=doc1.select("p.rank_advice").text().split('데')[0]
+    num=doc.select("span.num").text().split('')[1]+doc.select("span.num").text().split('')[2]
   }catch(e){flag=false} // 프로필 검색 실패시, 메봇 활성화가 꺼지지 않고, 계속 수행할 수 있도록 하기 위함.
 }
 
+function highest(accessid){
+  var doc2=JSON.parse(Jsoup.connect("https://api.nexon.co.kr/fifaonline4/v1.0/users/"+accessid+"/maxdivision")
+  .header("Authorization","nexonKey")
+  .ignoreContentType(true)
+  .get().text())
+  return doc2[0]["division"]
+}
+
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId){
-  if (msg.startsWith("!정보")) {
-    search = msg.substr(3).trim();
+  if (msg.startsWith("!프로필")) {
+    search = msg.substr(4).trim();
     flag=true
 
     kakao_login(replier);
+    var accessid=find_user_id(search);
+    switch (highest(accessid)) {
+      case 800:tag="슈퍼 챔피언스"
+      break
+      case 900:tag="챔피언스"
+      break
+      case 1100:tag="챌린지"
+      break
+      case 2000:tag="월드클래스 1부"
+      break
+      case 2100:tag="월드클래스 2부"
+      break
+      case 2200:tag="월드클래스 3부"
+      break
+      case 2300:tag="프로 1부"
+      break
+      case 2400:tag="프로 2부"
+      break
+      case 2500:tag="프로 3부"
+      break
+      case 2600:tag="세미프로 1부"
+      break
+      case 2700:tag="세미프로 2부"
+      break
+      case 2800:tag="세미프로 3부"
+      break
+      case 2900:tag="아마추어 1부"
+      break
+      case 3000:tag="아마추어 2부"
+      break
+      case 3100:tag="아마추어 3부"
+      break;
+      default:tag="배치경기를 봐야합니다."
+    }
     find_profile();
 
     let set={
@@ -64,7 +114,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
       v2:num
     }
     if(flag){
-      send_template(room,mytemplateId,set)
+      send_template(room,33407,set)
     }
     else{
       replier.reply("아이디를 다시 확인해주세요.")
